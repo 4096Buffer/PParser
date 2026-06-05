@@ -21,7 +21,10 @@ uint8_t* rvaToPtr(uint8_t* file_buffer_ptr, WORD sections_num, PIMAGE_SECTION_HE
 }
 
 int main() {
-    const char* filename = "sample.exe";
+    std::string filename;
+
+    std::cout << "Pass a filename of the PE: ";
+    std::cin >> filename;
 
     std::ifstream file(filename, std::ios::binary | std::ios::ate);
     
@@ -113,7 +116,6 @@ int main() {
         }
     }
 
-    std::string x;
-
-    std::cin >> x;
+    std::cin.ignore();
+    std::cin.get();
 }
